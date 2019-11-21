@@ -32,6 +32,7 @@ private String titre;
 
 private String realisateur;
 
+
 @Column(name ="date_sortie")
 private LocalDate dateSortie;
 

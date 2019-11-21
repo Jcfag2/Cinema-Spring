@@ -16,7 +16,6 @@ public class FilmDTO implements Serializable{
 	private LocalDate dateSortie;
 	private int duree;
 	private double prixHT;
-	private Map<String, Acteur> role = new HashMap<String, Acteur>();
 	
 	public FilmDTO() {}
 	
@@ -71,13 +70,6 @@ public class FilmDTO implements Serializable{
 		this.prixHT = prixHT;
 	}
 	
-	public Map<String, Acteur> getRole() {
-		return role;
-	}
-
-	public void setRole(Map<String, Acteur> role) {
-		this.role = role;
-	}
 
 	@Override
 	public int hashCode() {
