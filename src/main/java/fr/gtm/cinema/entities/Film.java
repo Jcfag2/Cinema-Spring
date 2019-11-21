@@ -45,8 +45,24 @@ private int duree;//durée du film en minutes
 @MapKeyColumn(name = "role")
 private Map<String, Acteur> role = new HashMap<String, Acteur>();
 
+
+
+public Film(long id, String titre, String realisateur, LocalDate dateSortie, double prixHT, int duree) {
+	this.id = id;
+	this.titre = titre;
+	this.realisateur = realisateur;
+	this.dateSortie = dateSortie;
+	this.prixHT = prixHT;
+	this.duree = duree;
+}
+public Film() {}
+
 public String getTitre() {
 	return titre;
+}
+
+public void addRole(String rol, Acteur acteur) {
+	role.put(rol, acteur);
 }
 
 public void setTitre(String titre) {

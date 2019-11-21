@@ -36,6 +36,23 @@ private LocalDate dateMort;
 @JoinTable(name="film_acteur", joinColumns=@JoinColumn(name="fk_film"), inverseJoinColumns=@JoinColumn(name="fk_acteur"))
 private List<Film> films;
 
+
+
+public Acteur() {}
+
+
+
+public Acteur(long id, String civilite, String nom, String prenom, LocalDate dateNaissace, LocalDate dateMort) {
+	this.id = id;
+	this.civilite = civilite;
+	this.nom = nom;
+	this.prenom = prenom;
+	this.dateNaissace = dateNaissace;
+	this.dateMort = dateMort;
+}
+
+
+
 public String getCivilite() {
 	return civilite;
 }

@@ -2,7 +2,10 @@ package fr.gtm.cinema.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
+import fr.gtm.cinema.entities.Acteur;
 import fr.gtm.cinema.entities.Film;
 
 
@@ -13,6 +16,7 @@ public class FilmDTO implements Serializable{
 	private LocalDate dateSortie;
 	private int duree;
 	private double prixHT;
+	private Map<String, Acteur> role = new HashMap<String, Acteur>();
 	
 	public FilmDTO() {}
 	
@@ -23,6 +27,11 @@ public class FilmDTO implements Serializable{
 		dateSortie = film.getDateSortie();
 		duree = film.getDuree();
 		prixHT = film.getPrixHT();
+	}
+	
+	public Film toFilm() {
+		Film f = new Film(id,titre,realisateur,dateSortie,prixHT,duree);
+		return f;
 	}
 	
 	public long getId() {
@@ -60,6 +69,14 @@ public class FilmDTO implements Serializable{
 	}
 	public void setPrixHT(double prixHT) {
 		this.prixHT = prixHT;
+	}
+	
+	public Map<String, Acteur> getRole() {
+		return role;
+	}
+
+	public void setRole(Map<String, Acteur> role) {
+		this.role = role;
 	}
 
 	@Override
