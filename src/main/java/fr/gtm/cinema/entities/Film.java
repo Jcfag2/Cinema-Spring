@@ -19,6 +19,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import fr.gtm.cinema.dto.ActeurDTO;
+
 @Entity
 @Table(name="films")
 @NamedQueries({
@@ -122,6 +124,17 @@ public String toString() {
 public Map<String, Acteur> getRole() {
 	return role;
 }
+
+public Map<String, Acteur> getRoleDTO() {
+	for (Map.Entry<String, Acteur> entry : role.entrySet()) {
+		entry.getKey();
+		Acteur a = entry.getValue();
+		a.setFilms(null);
+		entry.setValue(a);
+		}
+	return role;
+}
+
 
 public void setRole(Map<String, Acteur> role) {
 	this.role = role;

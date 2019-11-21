@@ -1,6 +1,7 @@
 package fr.gtm.cinema.rest;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -42,15 +43,22 @@ public class CinemaRestController {
 		}
 		return null;
 	}
+	
+	@GetMapping("/films/all")
+	public List<FilmDTO> getAllFilms() {
+	List<Film> films = repo2.findAll();
+	List<FilmDTO> fDTO = new ArrayList<FilmDTO>();
+	for(Film f : films) {
+		fDTO.add(new FilmDTO(f));
+	}
+		return fDTO;
+	}
 
-	@GetMapping("/role/{id}")
-	public ActeurDTO findRoleById(@PathVariable("id") long id) {
-		Optional<Acteur> acteur = repo.findById(id);
-		if (acteur.isPresent()) {
-			ActeurDTO aDTO = new ActeurDTO(acteur.get());
-			return aDTO;
-		}
-		return null;
+	@GetMapping("/roles/{id}")
+	public Map<String, Acteur> findRoleById(@PathVariable("id") long id) {
+		Film f = repo2.findById(id).get();
+		Map<String, Acteur> roles = f.getRoleDTO();
+		return roles;
 	}
 
 	@PostMapping("/roles/new")
