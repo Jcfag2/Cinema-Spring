@@ -18,10 +18,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.gtm.cinema.dao.ActeurRepository;
+import fr.gtm.cinema.dao.AlbumRepository;
 import fr.gtm.cinema.dao.CinemaRepository;
 import fr.gtm.cinema.dto.ActeurDTO;
 import fr.gtm.cinema.dto.FilmDTO;
 import fr.gtm.cinema.entities.Acteur;
+import fr.gtm.cinema.entities.Album;
 import fr.gtm.cinema.entities.Film;
 import fr.gtm.cinema.util.MailReceptor;
 
@@ -32,6 +34,8 @@ public class CinemaRestController {
 	@Autowired
 	CinemaRepository repo2;
 	@Autowired
+	AlbumRepository repo3;
+	
 	private JavaMailSender mailSender;
 
 	@GetMapping("/acteurs/{id}")
@@ -112,5 +116,21 @@ public class CinemaRestController {
 		mailSender.send(mail);
 
 	}
+	
+	@GetMapping("/albums/all")
+	public List<Album> getAllAlbums() {
+	List<Album> albums = repo3.findAll();
+	
+		return albums;
+	}
+	
+	@GetMapping("/album/{id}")
+	public Album getAlbumById(@PathVariable("id")long id) {
+	Album album = repo3.findById(id).get();
+	
+		return album;
+	}
+
+	
 
 }
