@@ -1,4 +1,4 @@
-package fr.gtm.cinema.rest;
+package fr.gtm.album.rest;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,15 +17,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import fr.gtm.cinema.dao.AlbumRepository;
-
-
-import fr.gtm.cinema.entities.Album;
+import fr.gtm.album.dao.AlbumRepository;
+import fr.gtm.album.entities.Album;
 
 
 @RestController
-public class CinemaRestController {
+public class AlbumRestController {
 
 	@Autowired
 	AlbumRepository repo3;

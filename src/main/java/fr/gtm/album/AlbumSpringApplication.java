@@ -1,4 +1,4 @@
-package fr.gtm.cinema;
+package fr.gtm.album;
 
 
 import org.springframework.boot.SpringApplication;
@@ -22,11 +22,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableAsync
 @EnableSwagger2
 @Controller
-public class CinemaSpringApplication implements ErrorController{
+public class AlbumSpringApplication implements ErrorController{
 
 	
 	public static void main(String[] args) {
-		SpringApplication.run(CinemaSpringApplication.class, args);
+		SpringApplication.run(AlbumSpringApplication.class, args);
 	}
 	
 	@Bean
