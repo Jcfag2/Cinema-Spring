@@ -3,8 +3,11 @@ package fr.gtm.cinema;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -18,7 +21,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableAsync
 @EnableSwagger2
-public class CinemaSpringApplication {
+@Controller
+public class CinemaSpringApplication implements ErrorController{
 
 	
 	public static void main(String[] args) {
@@ -41,5 +45,22 @@ public class CinemaSpringApplication {
 				.version("0.alpha")
 				.build();
 	}
+	
+	private static final String PATH = "/error";
+	
+	@RequestMapping(value = PATH)
+	public String error() {
+		return "forward:/index.html";
+	}
+	
+
+	@Override()
+	public String getErrorPath() {
+		return PATH;
+	}
+	
+	
+	
+
 
 }
