@@ -42,6 +42,12 @@ public class AlbumRestController {
 	
 		return album;
 	}
+	
+	@PostMapping("/albums/new")
+	public String createActeur(@RequestBody Album album) {
+		repo3.save(album);
+		return album.getNom() + " par: " + album.getAuteur() + " a bien été créé";
+	}
 
 	
 
