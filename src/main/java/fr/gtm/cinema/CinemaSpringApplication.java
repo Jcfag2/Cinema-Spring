@@ -41,7 +41,7 @@ public class CinemaSpringApplication implements ErrorController{
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				.title("REST API de gestion de films")
-				.contact(new Contact("Erwan", "http://gros.penis.fr", "e.soubeyrand@gros.penis.fr"))
+				.contact(new Contact("Erwan", "http://bovoyages.fr", "e.soubeyrand@bovoyages.fr"))
 				.version("0.alpha")
 				.build();
 	}
