@@ -58,7 +58,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-album-details [albumFils]=\"album\" (save)=\"onSave($event)\"></app-album-details>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-album-details *ngIf=\"album\" [albumFils]=\"album\" (save)=\"onSave($event)\"></app-album-details>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/pages/new-album/new-album.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/album/pages/new-album/new-album.component.html ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<form #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\">\n    <label>Nom</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom de l'album\" ngModel><br>\n    <label>Auteur</label>\n    <input type=\"text\" name=\"auteur\" placeholder=\"Auteur de l'album\" ngModel><br>\n    <label>Note</label>\n    <input type=\"number\" name=\"note\" placeholder=\"Note de l'album\" ngModel><br>\n\n    <button type=\"submit\">Sauver</button>\n</form>\n");
 
 /***/ }),
 
@@ -71,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Le site Angular des ALBUMS</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n          <ul class=\"navbar-nav\">\r\n            <li class=\"nav-item active\">\r\n              <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album\">Albums</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album-details/1\">Album 1</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album-details/2\">Album 2</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album-details/3\">Album 3</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album-details/4\">Album 4</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n\r\n        <button type=\"button\" class=\"btn btn-dark\" (click)=\"onLogIn()\" *ngIf=\"!isAuth\">log in</button>\r\n        <app-utilisateur *ngIf=\"isAuth\"></app-utilisateur>\r\n\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"onLogOut()\" *ngIf=\"isAuth\">log out</button>\r\n        <button type=\"button\" class=\"btn btn-info btn-sm\" *ngIf=\"!isAuth\">Non connecté</button>\r\n   \r\n      </nav>\r\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Le site Angular des ALBUMS</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n          <ul class=\"navbar-nav\">\r\n            <li class=\"nav-item active\">\r\n              <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album\">Albums</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/new-album\">Nouveau</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n\r\n        <button type=\"button\" class=\"btn btn-dark\" (click)=\"onLogIn()\" *ngIf=\"!isAuth\">log in</button>\r\n        <app-utilisateur *ngIf=\"isAuth\"></app-utilisateur>\r\n\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"onLogOut()\" *ngIf=\"isAuth\">log out</button>\r\n        <button type=\"button\" class=\"btn btn-info btn-sm\" *ngIf=\"!isAuth\">Non connecté</button>\r\n   \r\n      </nav>\r\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -349,6 +362,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_album_liste_album_liste_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/album-liste/album-liste.component */ "./src/app/album/pages/album-liste/album-liste.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/new-album/new-album.component */ "./src/app/album/pages/new-album/new-album.component.ts");
+
 
 
 
@@ -366,6 +381,7 @@ AlbumModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_album_details_album_details_component__WEBPACK_IMPORTED_MODULE_4__["AlbumDetailsComponent"],
             _pages_album_album_component__WEBPACK_IMPORTED_MODULE_5__["AlbumComponent"],
             _pages_album_liste_album_liste_component__WEBPACK_IMPORTED_MODULE_6__["AlbumListeComponent"],
+            _pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_9__["NewAlbumComponent"],
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -579,6 +595,64 @@ AlbumComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/album/pages/new-album/new-album.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/album/pages/new-album/new-album.component.css ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsYnVtL3BhZ2VzL25ldy1hbGJ1bS9uZXctYWxidW0uY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/album/pages/new-album/new-album.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/album/pages/new-album/new-album.component.ts ***!
+  \**************************************************************/
+/*! exports provided: NewAlbumComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewAlbumComponent", function() { return NewAlbumComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _shared_albums_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/albums.service */ "./src/app/album/shared/albums.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let NewAlbumComponent = class NewAlbumComponent {
+    constructor(albumService, router) {
+        this.albumService = albumService;
+        this.router = router;
+    }
+    ngOnInit() {
+    }
+    onSubmit(form) {
+        this.albumService.saveAlbum(form.value).subscribe(() => this.router.navigate(['/album']));
+    }
+};
+NewAlbumComponent.ctorParameters = () => [
+    { type: _shared_albums_service__WEBPACK_IMPORTED_MODULE_2__["AlbumsService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
+NewAlbumComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-new-album',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./new-album.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/pages/new-album/new-album.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./new-album.component.css */ "./src/app/album/pages/new-album/new-album.component.css")).default]
+    })
+], NewAlbumComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/album/shared/Album.ts":
 /*!***************************************!*\
   !*** ./src/app/album/shared/Album.ts ***!
@@ -640,8 +714,8 @@ let AlbumsService = class AlbumsService {
         return this.httpclient.get(this.url + '/' + id); //GET localhost:4200/api/albums/id
     }
     saveAlbum(album) {
-        console.log('save', album);
-        return this.httpclient.post(this.url, album); //POST localhost:4200/api/albums
+        console.log('save du service de', album);
+        return this.httpclient.post(this.url + '/new', album); //POST localhost:4200/api/albums
     }
 };
 AlbumsService.ctorParameters = () => [
@@ -674,6 +748,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _album_components_album_details_album_details_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./album/components/album-details/album-details.component */ "./src/app/album/components/album-details/album-details.component.ts");
 /* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth-guard.service */ "./src/app/auth-guard.service.ts");
 /* harmony import */ var _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./erreur/erreur.component */ "./src/app/erreur/erreur.component.ts");
+/* harmony import */ var _album_pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./album/pages/new-album/new-album.component */ "./src/app/album/pages/new-album/new-album.component.ts");
+
 
 
 
@@ -686,10 +762,13 @@ const routes = [
         path: 'album', component: _album_pages_album_liste_album_liste_component__WEBPACK_IMPORTED_MODULE_3__["AlbumListeComponent"]
     },
     {
-        path: 'album-details/:id', component: _album_components_album_details_album_details_component__WEBPACK_IMPORTED_MODULE_4__["AlbumDetailsComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__["AuthGuardService"]]
+        path: 'album-details/:id', component: _album_components_album_details_album_details_component__WEBPACK_IMPORTED_MODULE_4__["AlbumDetailsComponent"]
     },
     {
         path: 'notlogged', component: _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_6__["ErreurComponent"]
+    },
+    {
+        path: 'new-album', component: _album_pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_7__["NewAlbumComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__["AuthGuardService"]]
     },
     {
         path: '**', redirectTo: 'album'
