@@ -61,7 +61,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<form #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\">\n    <label>Nom</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom de l'album\" ngModel><br>\n    <label>Auteur</label>\n    <input type=\"text\" name=\"auteur\" placeholder=\"Auteur de l'album\" ngModel><br>\n    <label>Note</label>\n    <input type=\"number\" name=\"note\" placeholder=\"Note de l'album\" ngModel><br>\n\n    <button type=\"submit\">Sauver</button>\n</form>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<form #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\">\n    <label>Nom</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom de l'album\" ngModel required><br>\n    <label>Auteur</label>\n    <input type=\"text\" name=\"auteur\" placeholder=\"Auteur de l'album\" ngModel required><br>\n    <label>Note</label>\n    <input type=\"number\" name=\"note\" placeholder=\"0\" ngModel required min=\"0\" max=\"5\"><br>\n\n    <button type=\"submit\" [disabled]=\"f.invalid\">Sauver</button>\n\n</form>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html": 
