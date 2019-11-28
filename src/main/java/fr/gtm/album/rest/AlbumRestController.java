@@ -52,8 +52,9 @@ public class AlbumRestController {
 		return album;
 	}
 
-	@GetMapping("/albums/log")
-	public boolean login(Utilisateur u) {
+	@PostMapping("/albums/log")
+	public boolean login(@RequestBody Utilisateur u) {
+		System.out.println(u.getNom() +" " +u.getPassword());
 		String nom = u.getNom();
 		String pw = u.getPassword();
 		

@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>Veuillez vous connecter</p>\n<form #f=\"ngForm\" (ngSubmit)=\"login(f)\">\n    <label>Nom d'utilisateur</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom d'utilisateur\" ngModel required><br>\n    <label>Mot de passe</label>\n    <input type=\"password\" name=\"password\" placeholder=\"Mot de passe\" ngModel required><br>\n\n    <button type=\"submit\" [disabled]=\"f.invalid\" class=\"btn btn-dark\" (click)=\"onLogIn()\">log in</button>\n\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Veuillez vous connecter</p>\n<form #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\">\n    <label>Nom d'utilisateur</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom d'utilisateur\" ngModel required><br>\n    <label>Mot de passe</label>\n    <input type=\"password\" name=\"password\" placeholder=\"Mot de passe\" ngModel required><br>\n\n    <button type=\"submit\" [disabled]=\"f.invalid\" class=\"btn btn-dark\">log in</button>\n</form>\n");
 
 /***/ }),
 
@@ -655,32 +655,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/auth.service */ "./src/app/auth.service.ts");
 /* harmony import */ var _shared_albums_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/albums.service */ "./src/app/album/shared/albums.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 
 
 
 let LoginComponent = class LoginComponent {
-    constructor(authService, albumService, router) {
+    constructor(authService, albumService, router, httpclient) {
         this.authService = authService;
         this.albumService = albumService;
         this.router = router;
+        this.httpclient = httpclient;
     }
     ngOnInit() {
         this.isAuth = this.authService.isLoggedIn();
     }
-    onLogIn(f) {
-        this.authService.logIn(f);
-        this.isAuth = this.authService.isLoggedIn();
-    }
-    login(form) {
+    onSubmit(form) {
         this.albumService.login(form.value).subscribe(() => this.router.navigate(['/album']));
     }
 };
 LoginComponent.ctorParameters = () => [
     { type: src_app_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
     { type: _shared_albums_service__WEBPACK_IMPORTED_MODULE_3__["AlbumsService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -791,8 +791,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Album__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Album */ "./src/app/album/shared/Album.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var src_app_shared_Utilisateur__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/Utilisateur */ "./src/app/shared/Utilisateur.ts");
-
 
 
 
@@ -819,7 +817,8 @@ let AlbumsService = class AlbumsService {
         return this.httpclient.post(this.url + '/new', album); //POST localhost:7070/albums/new
     }
     login(utilisateur) {
-        return this.httpclient.post(this.url + '/log', src_app_shared_Utilisateur__WEBPACK_IMPORTED_MODULE_5__["Utilisateur"]);
+        console.log(utilisateur);
+        return this.httpclient.post(this.url + '/log', utilisateur);
     }
 };
 AlbumsService.ctorParameters = () => [
@@ -1162,21 +1161,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 
 let AuthService = class AuthService {
-    constructor(router) {
+    constructor(router, httpclient) {
         this.router = router;
+        this.httpclient = httpclient;
         this.isAuth = false;
     }
     isLoggedIn() {
         return this.isAuth;
     }
-    logIn(f) {
-        console.log(f);
-        this.isAuth = true;
-        this.router.navigate(['/album']);
+    logIn(utilisateur) {
+        console.log(utilisateur);
+        this.httpclient.get('albums/log', utilisateur).subscribe(() => {
+            this.isAuth = true;
+            this.router.navigate(['/album']);
+        });
     }
     logOut() {
         this.isAuth = false;
@@ -1184,7 +1188,8 @@ let AuthService = class AuthService {
     }
 };
 AuthService.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
 ];
 AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
