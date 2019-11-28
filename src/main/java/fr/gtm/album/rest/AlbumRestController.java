@@ -28,6 +28,7 @@ public class AlbumRestController {
 
 	@Autowired
 	AlbumRepository repo3;
+	@Autowired
 	UtilisateurRepository repo4;
 	
 
@@ -57,14 +58,17 @@ public class AlbumRestController {
 		System.out.println(u.getNom() +" " +u.getPassword());
 		String nom = u.getNom();
 		String pw = u.getPassword();
+
 		
-		Utilisateur ubdd = repo4.findByNom(nom);
-		if (pw==ubdd.getPassword()) {
+		Utilisateur u2 = repo4.getUtilisateurByNom(nom);
+		if (pw.equals(u2.getPassword())) {
+			System.out.println("c'est valide");
 			return true;
 		}else {
-		
+		System.out.println("c'est pas valide");
 		return false;
 		}
+
 	}
 	
 

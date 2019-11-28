@@ -1,5 +1,6 @@
 package fr.gtm.album.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,8 @@ private long id;
 private String nom;
 private String auteur;
 private int note;
+@Column(name="imageurl")
+private String imageUrl;
 
 public Album() {}
 
@@ -56,6 +59,14 @@ public int getNote() {
 
 public void setNote(int note) {
 	this.note = note;
+}
+
+public String getImageUrl() {
+	return imageUrl;
+}
+
+public void setImageURL(String imageURL) {
+	this.imageUrl = imageUrl;
 }
 
 
