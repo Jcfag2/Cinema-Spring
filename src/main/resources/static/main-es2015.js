@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<!-- for each -->\n<div *ngFor=\"let a of albums; let i = index;\"> \n\n   <a [routerLink]=\"['/album-details', a.id]\">\n    \n    {{a.id}} - {{a.nom}}\n\n    </a>\n\n    </div> \n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<app-menu></app-menu>\n<!-- for each -->\n<div *ngFor=\"let a of albums; let i = index;\"> \n\n   <a [routerLink]=\"['/album-details', a.id]\">\n    \n    {{a.id}} - {{a.nom}}\n\n    </a>\n\n    </div> \n\n\n\n");
 
 /***/ }),
 
@@ -58,7 +58,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-album-details *ngIf=\"album\" [albumFils]=\"album\" (save)=\"onSave($event)\"></app-album-details>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<app-album-details *ngIf=\"album\" [albumFils]=\"album\" (save)=\"onSave($event)\"></app-album-details>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/pages/login/login.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/album/pages/login/login.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Veuillez vous connecter</p>\n<form #f=\"ngForm\" (ngSubmit)=\"login(f)\">\n    <label>Nom d'utilisateur</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom d'utilisateur\" ngModel required><br>\n    <label>Mot de passe</label>\n    <input type=\"password\" name=\"password\" placeholder=\"Mot de passe\" ngModel required><br>\n\n    <button type=\"submit\" [disabled]=\"f.invalid\" class=\"btn btn-dark\" (click)=\"onLogIn()\">log in</button>\n\n</form>\n");
 
 /***/ }),
 
@@ -71,7 +84,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\">\n    <label>Nom</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom de l'album\" ngModel required><br>\n    <label>Auteur</label>\n    <input type=\"text\" name=\"auteur\" placeholder=\"Auteur de l'album\" ngModel required><br>\n    <label>Note</label>\n    <input type=\"number\" name=\"note\" placeholder=\"0\" ngModel required min=\"0\" max=\"5\"><br>\n\n    <button type=\"submit\" [disabled]=\"f.invalid\">Sauver</button>\n\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<form #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\">\n    <label>Nom</label>\n    <input type=\"text\" name=\"nom\" placeholder=\"Nom de l'album\" ngModel required><br>\n    <label>Auteur</label>\n    <input type=\"text\" name=\"auteur\" placeholder=\"Auteur de l'album\" ngModel required><br>\n    <label>Note</label>\n    <input type=\"number\" name=\"note\" placeholder=\"0\" ngModel required min=\"0\" max=\"5\"><br>\n\n    <button type=\"submit\" [disabled]=\"f.invalid\">Sauver</button>\n\n</form>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/shared/menu/menu.component.html":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/album/shared/menu/menu.component.html ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <a class=\"navbar-brand\" href=\"#\">Le site Angular des ALBUMS</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n          <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n            <ul class=\"navbar-nav\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album\">Albums</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/new-album\">Nouveau</a>\n              </li>\n            </ul>\n          </div>\n  \n          <button type=\"button\" class=\"btn btn-success\" (click)=\"onLogOut()\" *ngIf=\"isAuth\">log out</button>\n          <app-utilisateur *ngIf=\"isAuth\"></app-utilisateur>\n     \n        </nav>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/shared/utilisateur/utilisateur.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/album/shared/utilisateur/utilisateur.component.html ***!
+  \***********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<button type=\"button\" class=\"btn btn-warning btn-sm\">{{user.nom}}</button>\n");
 
 /***/ }),
 
@@ -84,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Le site Angular des ALBUMS</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n          <ul class=\"navbar-nav\">\r\n            <li class=\"nav-item active\">\r\n              <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/album\">Albums</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"highlight\" routerLink=\"/new-album\">Nouveau</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n\r\n        <button type=\"button\" class=\"btn btn-dark\" (click)=\"onLogIn()\" *ngIf=\"!isAuth\">log in</button>\r\n        <app-utilisateur *ngIf=\"isAuth\"></app-utilisateur>\r\n\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"onLogOut()\" *ngIf=\"isAuth\">log out</button>\r\n        <button type=\"button\" class=\"btn btn-info btn-sm\" *ngIf=\"!isAuth\">Non connecté</button>\r\n   \r\n      </nav>\r\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -98,19 +137,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<h1>Vous devez vous connecter pour accéder à cette page!</h1>\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/utilisateur/utilisateur.component.html":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/utilisateur/utilisateur.component.html ***!
-  \**********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<button type=\"button\" class=\"btn btn-warning btn-sm\">{{user.prenom}} {{user.nom}}</button>\n");
 
 /***/ }),
 
@@ -363,6 +389,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/new-album/new-album.component */ "./src/app/album/pages/new-album/new-album.component.ts");
+/* harmony import */ var _shared_menu_menu_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shared/menu/menu.component */ "./src/app/album/shared/menu/menu.component.ts");
+/* harmony import */ var _shared_utilisateur_utilisateur_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./shared/utilisateur/utilisateur.component */ "./src/app/album/shared/utilisateur/utilisateur.component.ts");
+
+
 
 
 
@@ -382,6 +412,8 @@ AlbumModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _pages_album_album_component__WEBPACK_IMPORTED_MODULE_5__["AlbumComponent"],
             _pages_album_liste_album_liste_component__WEBPACK_IMPORTED_MODULE_6__["AlbumListeComponent"],
             _pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_9__["NewAlbumComponent"],
+            _shared_menu_menu_component__WEBPACK_IMPORTED_MODULE_10__["MenuComponent"],
+            _shared_utilisateur_utilisateur_component__WEBPACK_IMPORTED_MODULE_11__["UtilisateurComponent"],
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -595,6 +627,73 @@ AlbumComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/album/pages/login/login.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/album/pages/login/login.component.css ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsYnVtL3BhZ2VzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/album/pages/login/login.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/album/pages/login/login.component.ts ***!
+  \******************************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/auth.service */ "./src/app/auth.service.ts");
+/* harmony import */ var _shared_albums_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/albums.service */ "./src/app/album/shared/albums.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+let LoginComponent = class LoginComponent {
+    constructor(authService, albumService, router) {
+        this.authService = authService;
+        this.albumService = albumService;
+        this.router = router;
+    }
+    ngOnInit() {
+        this.isAuth = this.authService.isLoggedIn();
+    }
+    onLogIn(f) {
+        this.authService.logIn(f);
+        this.isAuth = this.authService.isLoggedIn();
+    }
+    login(form) {
+        this.albumService.login(form.value).subscribe(() => this.router.navigate(['/album']));
+    }
+};
+LoginComponent.ctorParameters = () => [
+    { type: src_app_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
+    { type: _shared_albums_service__WEBPACK_IMPORTED_MODULE_3__["AlbumsService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+];
+LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-login',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/pages/login/login.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.css */ "./src/app/album/pages/login/login.component.css")).default]
+    })
+], LoginComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/album/pages/new-album/new-album.component.css":
 /*!***************************************************************!*\
   !*** ./src/app/album/pages/new-album/new-album.component.css ***!
@@ -692,6 +791,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Album__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Album */ "./src/app/album/shared/Album.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var src_app_shared_Utilisateur__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/Utilisateur */ "./src/app/shared/Utilisateur.ts");
+
 
 
 
@@ -708,14 +809,17 @@ let AlbumsService = class AlbumsService {
         this.url = 'albums';
     }
     getAlbums() {
-        return this.httpclient.get(this.url + '/all').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(result => result.map(album => new _Album__WEBPACK_IMPORTED_MODULE_2__["Album"](album.id, album.auteur, album.nom, album.note))));
+        return this.httpclient.get(this.url + '/all').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(result => result.map(album => new _Album__WEBPACK_IMPORTED_MODULE_2__["Album"](album.id, album.auteur, album.nom, album.note)))); //GET localhost:7070/albums/all
     }
     getAlbum(id) {
-        return this.httpclient.get(this.url + '/' + id); //GET localhost:4200/api/albums/id
+        return this.httpclient.get(this.url + '/' + id); //GET localhost:7070/albums/id
     }
     saveAlbum(album) {
         console.log('save du service de', album);
-        return this.httpclient.post(this.url + '/new', album); //POST localhost:4200/api/albums
+        return this.httpclient.post(this.url + '/new', album); //POST localhost:7070/albums/new
+    }
+    login(utilisateur) {
+        return this.httpclient.post(this.url + '/log', src_app_shared_Utilisateur__WEBPACK_IMPORTED_MODULE_5__["Utilisateur"]);
     }
 };
 AlbumsService.ctorParameters = () => [
@@ -726,6 +830,111 @@ AlbumsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], AlbumsService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/album/shared/menu/menu.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/album/shared/menu/menu.component.css ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsYnVtL3NoYXJlZC9tZW51L21lbnUuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/album/shared/menu/menu.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/album/shared/menu/menu.component.ts ***!
+  \*****************************************************/
+/*! exports provided: MenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return MenuComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../auth.service */ "./src/app/auth.service.ts");
+
+
+
+let MenuComponent = class MenuComponent {
+    constructor(authService) {
+        this.authService = authService;
+    }
+    ngOnInit() {
+        this.isAuth = this.authService.isLoggedIn();
+    }
+    onLogOut() {
+        this.authService.logOut();
+        this.isAuth = this.authService.isLoggedIn();
+    }
+};
+MenuComponent.ctorParameters = () => [
+    { type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+];
+MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-menu',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./menu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/shared/menu/menu.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./menu.component.css */ "./src/app/album/shared/menu/menu.component.css")).default]
+    })
+], MenuComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/album/shared/utilisateur/utilisateur.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/album/shared/utilisateur/utilisateur.component.css ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsYnVtL3NoYXJlZC91dGlsaXNhdGV1ci91dGlsaXNhdGV1ci5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/album/shared/utilisateur/utilisateur.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/album/shared/utilisateur/utilisateur.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: UtilisateurComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilisateurComponent", function() { return UtilisateurComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _shared_Utilisateur__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared/Utilisateur */ "./src/app/shared/Utilisateur.ts");
+
+
+
+let UtilisateurComponent = class UtilisateurComponent {
+    constructor() {
+    }
+    ngOnInit() {
+        this.user = new _shared_Utilisateur__WEBPACK_IMPORTED_MODULE_2__["Utilisateur"]();
+        this.user.nom = "Kucuk";
+    }
+};
+UtilisateurComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-utilisateur',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./utilisateur.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/shared/utilisateur/utilisateur.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./utilisateur.component.css */ "./src/app/album/shared/utilisateur/utilisateur.component.css")).default]
+    })
+], UtilisateurComponent);
 
 
 
@@ -747,8 +956,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _album_pages_album_liste_album_liste_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./album/pages/album-liste/album-liste.component */ "./src/app/album/pages/album-liste/album-liste.component.ts");
 /* harmony import */ var _album_components_album_details_album_details_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./album/components/album-details/album-details.component */ "./src/app/album/components/album-details/album-details.component.ts");
 /* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth-guard.service */ "./src/app/auth-guard.service.ts");
-/* harmony import */ var _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./erreur/erreur.component */ "./src/app/erreur/erreur.component.ts");
-/* harmony import */ var _album_pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./album/pages/new-album/new-album.component */ "./src/app/album/pages/new-album/new-album.component.ts");
+/* harmony import */ var _album_pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./album/pages/new-album/new-album.component */ "./src/app/album/pages/new-album/new-album.component.ts");
+/* harmony import */ var _album_pages_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./album/pages/login/login.component */ "./src/app/album/pages/login/login.component.ts");
 
 
 
@@ -759,16 +968,16 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: 'album', component: _album_pages_album_liste_album_liste_component__WEBPACK_IMPORTED_MODULE_3__["AlbumListeComponent"]
+        path: 'album', component: _album_pages_album_liste_album_liste_component__WEBPACK_IMPORTED_MODULE_3__["AlbumListeComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__["AuthGuardService"]]
     },
     {
-        path: 'album-details/:id', component: _album_components_album_details_album_details_component__WEBPACK_IMPORTED_MODULE_4__["AlbumDetailsComponent"]
+        path: 'album-details/:id', component: _album_components_album_details_album_details_component__WEBPACK_IMPORTED_MODULE_4__["AlbumDetailsComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__["AuthGuardService"]]
     },
     {
-        path: 'notlogged', component: _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_6__["ErreurComponent"]
+        path: 'notlogged', component: _album_pages_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"]
     },
     {
-        path: 'new-album', component: _album_pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_7__["NewAlbumComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__["AuthGuardService"]]
+        path: 'new-album', component: _album_pages_new_album_new_album_component__WEBPACK_IMPORTED_MODULE_6__["NewAlbumComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__["AuthGuardService"]]
     },
     {
         path: '**', redirectTo: 'album'
@@ -824,10 +1033,6 @@ let AppComponent = class AppComponent {
     ngOnInit() {
         this.isAuth = this.authService.isLoggedIn();
     }
-    onLogIn() {
-        this.authService.logIn();
-        this.isAuth = this.authService.isLoggedIn();
-    }
     onLogOut() {
         this.authService.logOut();
         this.isAuth = this.authService.isLoggedIn();
@@ -864,9 +1069,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _utilisateur_utilisateur_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utilisateur/utilisateur.component */ "./src/app/utilisateur/utilisateur.component.ts");
-/* harmony import */ var _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./erreur/erreur.component */ "./src/app/erreur/erreur.component.ts");
-/* harmony import */ var _album_album_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./album/album.module */ "./src/app/album/album.module.ts");
+/* harmony import */ var _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./erreur/erreur.component */ "./src/app/erreur/erreur.component.ts");
+/* harmony import */ var _album_album_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./album/album.module */ "./src/app/album/album.module.ts");
+/* harmony import */ var _album_pages_login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./album/pages/login/login.component */ "./src/app/album/pages/login/login.component.ts");
 
 
 
@@ -882,14 +1087,14 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-            _utilisateur_utilisateur_component__WEBPACK_IMPORTED_MODULE_6__["UtilisateurComponent"],
-            _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_7__["ErreurComponent"],
+            _erreur_erreur_component__WEBPACK_IMPORTED_MODULE_6__["ErreurComponent"],
+            _album_pages_login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            _album_album_module__WEBPACK_IMPORTED_MODULE_8__["AlbumModule"]
+            _album_album_module__WEBPACK_IMPORTED_MODULE_7__["AlbumModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -968,12 +1173,14 @@ let AuthService = class AuthService {
     isLoggedIn() {
         return this.isAuth;
     }
-    logIn() {
+    logIn(f) {
+        console.log(f);
         this.isAuth = true;
+        this.router.navigate(['/album']);
     }
     logOut() {
         this.isAuth = false;
-        this.router.navigate(['/album']);
+        this.router.navigate(['/notlogged']);
     }
 };
 AuthService.ctorParameters = () => [
@@ -1081,60 +1288,9 @@ __webpack_require__.r(__webpack_exports__);
 class Utilisateur {
     constructor(args = {}) {
         this.nom = args.nom;
-        this.prenom = args.prenom;
-        this.lastLogin = new Date();
+        this.password = args.password;
     }
 }
-
-
-/***/ }),
-
-/***/ "./src/app/utilisateur/utilisateur.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/utilisateur/utilisateur.component.css ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3V0aWxpc2F0ZXVyL3V0aWxpc2F0ZXVyLmNvbXBvbmVudC5jc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/utilisateur/utilisateur.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/utilisateur/utilisateur.component.ts ***!
-  \******************************************************/
-/*! exports provided: UtilisateurComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilisateurComponent", function() { return UtilisateurComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _shared_Utilisateur__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/Utilisateur */ "./src/app/shared/Utilisateur.ts");
-
-
-
-let UtilisateurComponent = class UtilisateurComponent {
-    constructor() {
-    }
-    ngOnInit() {
-        this.user = new _shared_Utilisateur__WEBPACK_IMPORTED_MODULE_2__["Utilisateur"]();
-        this.user.nom = "Kucuk";
-        this.user.prenom = "Denis";
-    }
-};
-UtilisateurComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-utilisateur',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./utilisateur.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/utilisateur/utilisateur.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./utilisateur.component.css */ "./src/app/utilisateur/utilisateur.component.css")).default]
-    })
-], UtilisateurComponent);
-
 
 
 /***/ }),

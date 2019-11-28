@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.gtm.album.dao.AlbumRepository;
+import fr.gtm.album.dao.UtilisateurRepository;
 import fr.gtm.album.entities.Album;
+import fr.gtm.album.entities.Utilisateur;
 
 
 @RestController
@@ -26,6 +28,7 @@ public class AlbumRestController {
 
 	@Autowired
 	AlbumRepository repo3;
+	UtilisateurRepository repo4;
 	
 
 	
@@ -49,6 +52,19 @@ public class AlbumRestController {
 		return album;
 	}
 
+	@GetMapping("/albums/log")
+	public boolean login(Utilisateur u) {
+		String nom = u.getNom();
+		String pw = u.getPassword();
+		
+		Utilisateur ubdd = repo4.findByNom(nom);
+		if (pw==ubdd.getPassword()) {
+			return true;
+		}else {
+		
+		return false;
+		}
+	}
 	
 
 }
